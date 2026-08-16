@@ -1,1 +1,363 @@
-/index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <meta name="theme-color" content="#050509">
+    <meta name="description"
+          content="GOJO SENSI - Free Fire sensitivity generator">
+
+    <title>GOJO SENSI</title>
+
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="icon" type="image/png" href="assets/icons/icon-192.png">
+</head>
+
+<body>
+
+<header class="topbar">
+    <div class="brand">
+        <div class="brand-icon">G</div>
+
+        <div>
+            <h1>GOJO <span>SENSI</span></h1>
+            <p>FREE FIRE SENSITIVITY</p>
+        </div>
+    </div>
+
+    <button id="installBtn" class="install-btn hidden">
+        INSTALL
+    </button>
+</header>
+
+
+<main>
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="status">
+                <span></span>
+                ONLINE
+            </div>
+
+            <h2>
+                FIND YOUR
+                <strong>PERFECT SENSI</strong>
+            </h2>
+
+            <p>
+                Generate optimized Free Fire sensitivity settings
+                for your device and play style.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section class="panel">
+
+        <div class="panel-title">
+            <span>01</span>
+            <h3>DEVICE SETTINGS</h3>
+        </div>
+
+
+        <label for="device">
+            DEVICE
+        </label>
+
+        <select id="device">
+
+            <option value="low">
+                Low-End Device
+            </option>
+
+            <option value="mid" selected>
+                Mid-Range Device
+            </option>
+
+            <option value="high">
+                High-End Device
+            </option>
+
+        </select>
+
+
+        <label for="style">
+            PLAY STYLE
+        </label>
+
+        <select id="style">
+
+            <option value="balanced">
+                Balanced
+            </option>
+
+            <option value="rush">
+                Rush / Aggressive
+            </option>
+
+            <option value="one-tap">
+                One-Tap
+            </option>
+
+            <option value="drag">
+                Drag Headshot
+            </option>
+
+        </select>
+
+    </section>
+
+
+    <section class="panel">
+
+        <div class="panel-title">
+            <span>02</span>
+            <h3>SENSITIVITY</h3>
+        </div>
+
+
+        <div class="slider-item">
+
+            <div class="slider-header">
+                <label for="general">
+                    GENERAL
+                </label>
+
+                <output id="generalValue">
+                    90
+                </output>
+            </div>
+
+            <input
+                id="general"
+                type="range"
+                min="0"
+                max="200"
+                value="90">
+        </div>
+
+
+        <div class="slider-item">
+
+            <div class="slider-header">
+                <label for="redDot">
+                    RED DOT
+                </label>
+
+                <output id="redDotValue">
+                    85
+                </output>
+            </div>
+
+            <input
+                id="redDot"
+                type="range"
+                min="0"
+                max="200"
+                value="85">
+        </div>
+
+
+        <div class="slider-item">
+
+            <div class="slider-header">
+                <label for="scope2">
+                    2X SCOPE
+                </label>
+
+                <output id="scope2Value">
+                    80
+                </output>
+            </div>
+
+            <input
+                id="scope2"
+                type="range"
+                min="0"
+                max="200"
+                value="80">
+        </div>
+
+
+        <div class="slider-item">
+
+            <div class="slider-header">
+                <label for="scope4">
+                    4X SCOPE
+                </label>
+
+                <output id="scope4Value">
+                    75
+                </output>
+            </div>
+
+            <input
+                id="scope4"
+                type="range"
+                min="0"
+                max="200"
+                value="75">
+        </div>
+
+
+        <div class="slider-item">
+
+            <div class="slider-header">
+                <label for="sniper">
+                    SNIPER
+                </label>
+
+                <output id="sniperValue">
+                    60
+                </output>
+            </div>
+
+            <input
+                id="sniper"
+                type="range"
+                min="0"
+                max="200"
+                value="60">
+        </div>
+
+
+        <div class="slider-item">
+
+            <div class="slider-header">
+                <label for="freeLook">
+                    FREE LOOK
+                </label>
+
+                <output id="freeLookValue">
+                    70
+                </output>
+            </div>
+
+            <input
+                id="freeLook"
+                type="range"
+                min="0"
+                max="200"
+                value="70">
+        </div>
+
+    </section>
+
+
+    <section class="actions">
+
+        <button id="generateBtn" class="primary-btn">
+            ⚡ GENERATE SENSI
+        </button>
+
+        <button id="resetBtn" class="secondary-btn">
+            RESET
+        </button>
+
+    </section>
+
+
+    <section id="resultPanel" class="panel result-panel">
+
+        <div class="panel-title">
+            <span>03</span>
+            <h3>YOUR GOJO SENSI</h3>
+        </div>
+
+
+        <div class="result-grid">
+
+            <div class="result-card">
+                <span>GENERAL</span>
+                <strong id="resultGeneral">90</strong>
+            </div>
+
+            <div class="result-card">
+                <span>RED DOT</span>
+                <strong id="resultRedDot">85</strong>
+            </div>
+
+            <div class="result-card">
+                <span>2X SCOPE</span>
+                <strong id="resultScope2">80</strong>
+            </div>
+
+            <div class="result-card">
+                <span>4X SCOPE</span>
+                <strong id="resultScope4">75</strong>
+            </div>
+
+            <div class="result-card">
+                <span>SNIPER</span>
+                <strong id="resultSniper">60</strong>
+            </div>
+
+            <div class="result-card">
+                <span>FREE LOOK</span>
+                <strong id="resultFreeLook">70</strong>
+            </div>
+
+        </div>
+
+
+        <button id="copyBtn" class="copy-btn">
+            📋 COPY SETTINGS
+        </button>
+
+        <p id="copyStatus" class="copy-status"></p>
+
+    </section>
+
+
+    <section class="info">
+
+        <h3>GOJO SENSI</h3>
+
+        <p>
+            GOJO SENSI is a sensitivity generator designed to help
+            Free Fire players experiment with different control
+            configurations.
+        </p>
+
+        <div class="warning">
+            <strong>NOTE</strong>
+
+            <p>
+                These settings are starting points only.
+                Device performance, touch response and personal
+                play style can affect your results.
+            </p>
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <p>
+        © 2026 GOJO SENSI
+    </p>
+
+    <p>
+        Fan-made sensitivity tool
+    </p>
+
+</footer>
+
+
+<script src="js/app.js"></script>
+
+</body>
+          </html>
